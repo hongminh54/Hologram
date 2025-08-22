@@ -1,24 +1,6 @@
 # AEHolograms - Wiki Hướng Dẫn Sử Dụng
 ---
 
-## Mục Lục
-
-1. [Giới Thiệu](#-giới-thiệu)
-2. [Cài Đặt](#-cài-đặt)
-3. [Lệnh Cơ Bản](#-lệnh-cơ-bản)
-4. [Tạo Hologram](#-tạo-hologram)
-5. [Quản Lý Dòng (Lines)](#-quản-lý-dòng-lines)
-6. [Quản Lý Trang (Pages)](#-quản-lý-trang-pages)
-7. [Animation Hệ Thống](#-animation-hệ-thống)
-8. [Loại Hologram](#-loại-hologram)
-9. [Actions & Click Events](#-actions--click-events)
-10. [Cấu Hình](#-cấu-hình)
-11. [Permissions](#-permissions)
-12. [Mẹo & Thủ Thuật](#-mẹo--thủ-thuật)
-13. [FAQ](#-faq)
-
----
-
 ## Giới Thiệu
 
 **AEHolograms** là một plugin hologram mạnh mẽ cho Minecraft, hỗ trợ từ phiên bản **1.8.x đến 1.21.x**. Plugin cung cấp các tính năng:
