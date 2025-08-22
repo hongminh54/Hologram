@@ -1,19 +1,6 @@
 # AEHolograms - Wiki Hướng Dẫn Sử Dụng
 ---
 
-## Giới Thiệu
-
-**AEHolograms** là một plugin hologram mạnh mẽ cho Minecraft, hỗ trợ từ phiên bản **1.8.x đến 1.21.x**. Plugin cung cấp các tính năng:
-
-- ✅ Hologram text với animation đa dạng
-- ✅ Hologram items, heads, entities
-- ✅ Hệ thống trang (pages) và click actions
-- ✅ Tương thích PlaceholderAPI & HeadDatabase  
-- ✅ Damage & Healing display
-- ✅ Performance cao, tối ưu hóa tốt
-
----
-
 ## Lệnh Cơ Bản
 
 ### Lệnh Chính
