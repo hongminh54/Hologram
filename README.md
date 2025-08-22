@@ -1,4 +1,4 @@
-# AEHolograms - Wiki Hướng Dẫn Sử Dụng
+# AEHolograms - Wiki
 ---
 
 ## Lệnh Cơ Bản
@@ -15,6 +15,7 @@ Aliases: /aeholo, /holograms, /holo, /aeh
 |------|-------|-------|
 | `/aeh help` | Hiển thị trợ giúp | |
 | `/aeh version` | Xem phiên bản plugin | |
+| `/aeh wiki` | Hiển thị link wiki plugin | |
 | `/aeh reload` | Tải lại plugin | |
 | `/aeh list [page]` | Danh sách hologram | `/aeh list 1` |
 
@@ -458,10 +459,6 @@ Best Practices:
 Command: /aeh p addaction welcome 1 LEFT [PLAYER] spawn
 Description: Player chạy lệnh "/spawn"
 
-# Lệnh console  
-Command: /aeh p addaction welcome 1 RIGHT [CONSOLE] give %player% diamond 1
-Description: Console chạy lệnh give diamond cho player
-
 # Tin nhắn
 Command: /aeh p addaction welcome 1 LEFT [MESSAGE] &aWelcome to server!
 Description: Gửi tin nhắn màu xanh lá đến player
@@ -498,117 +495,6 @@ Step 4: /aeh p addaction spawn 1 LEFT [PLAYER] spawn
 Step 5: /aeh p addaction spawn 1 LEFT [MESSAGE] &aTeleported to spawn!
 Result: Hologram teleport với thông báo xác nhận
 ```
-
----
-
-## Cấu Hình
-
-### File config.yml
-
-```code
-defaults:
-  text: "Blank Line"
-  display-range: 48      # Phạm vi hiển thị (blocks)
-  update-range: 48       # Phạm vi cập nhật (blocks) 
-  update-interval: 20    # Thời gian cập nhật (ticks)
-  lru-cache-size: 500    # Kích thước cache
-  
-  # Chiều cao mặc định cho từng loại
-  height:
-    text: 0.3
-    icon: 0.6
-    head: 0.75
-    smallhead: 0.6
-    
-  down-origin: false     # Gốc tọa độ từ dưới lên
-
-# Thời gian cooldown click (ticks)
-click-cooldown: 1
-
-# Cho phép placeholder trong animation (tốn CPU)
-allow-placeholders-inside-animations: false
-
-# Cập nhật hologram khi teleport
-update-visibility-on-teleport: false
-
-# Hologram ở tầm mắt player
-holograms-eye-level-positioning: false
-
-# Timeout kết nối skin (giây)
-player-skin-connection-timeout: 5
-
-# Hiển thị damage
-damage-display:
-  enabled: false
-  players: false
-  mobs: false
-  zero-damage: false
-  duration: 40           # Thời gian hiển thị (ticks)
-  appearance: '&c{damage}'
-  critical-appearance: '&4&lCrit!&4 {damage}'
-  height: 0
-
-# Hiển thị healing
-healing-display:
-  enabled: false
-  players: false
-  mobs: false
-  duration: 40
-  appearance: '&a+ {heal}'
-  height: 0
-
-# Ký tự thay thế tùy chỉnh
-custom-replacements:
-  '[x]': '█'
-  '[X]': '█'
-  '[/]': '▌'
-  '[,]': '░'
-  '[,,]': '▒'
-  '[,,,]': '▓'
-  '[p]': '•'
-  '[P]': '•'
-  '[|]': '⎹'
-```
----
-
-## Permissions
-
-### Permissions Chính
-
-| Permission | Mô Tả | Mặc Định |
-|------------|--------|----------|
-| `aeholograms.admin` | Toàn bộ quyền admin | OP |
-| `aeholograms.default` | Quyền cơ bản | True |
-| `aeholograms.command` | Sử dụng lệnh | OP |
-
-### Permissions Chi Tiết
-
-```code
-# Hologram Management
-aeholograms.command.holograms.create
-aeholograms.command.holograms.delete
-aeholograms.command.holograms.edit
-aeholograms.command.holograms.clone
-aeholograms.command.holograms.teleport
-aeholograms.command.holograms.movehere
-
-# Line Management  
-aeholograms.command.lines.add
-aeholograms.command.lines.remove
-aeholograms.command.lines.edit
-aeholograms.command.lines.set
-
-# Page Management
-aeholograms.command.pages.add
-aeholograms.command.pages.remove
-aeholograms.command.pages.switch
-
-# Utility
-aeholograms.command.list
-aeholograms.command.reload
-aeholograms.command.help
-```
-
 ---
 
 ## Mẹo & Thủ Thuật
@@ -678,47 +564,6 @@ Welcome Sign:
     Description: Icon nether star phát sáng
   - Command: /aeh l add welcome 1 &8&o━━━━━━━━━━━━━━━━━━━
     Description: Đường phân cách dưới
-```
-
-### 5. **Performance Tips**
-
-```code
-Optimization Settings:
-  - display-range: Đặt từ 32-48 blocks (mặc định 48)
-  - update-range: Đặt từ 32-48 blocks (mặc định 48)
-  - update-interval: Tăng lên 40-60 ticks nếu không cần update liên tục
-  - allow-placeholders-inside-animations: false (nếu không dùng placeholder trong animation)
-
-Best Practices:
-  - Hạn chế số lượng animation cùng lúc (tối đa 5-10)
-  - Tránh tạo quá nhiều hologram trong cùng một khu vực
-  - Sử dụng quyền để giới hạn ai có thể thấy hologram
-  - Định kỳ kiểm tra hologram không sử dụng và xóa bỏ
-```
-
-### 6. **Troubleshooting**
-
-```code
-# Kiểm tra hologram gần bạn
-Command: /aeh h near 50
-Description: Xem tất cả hologram trong bán kính 50 blocks
-
-# Cập nhật hologram bị lỗi
-Command: /aeh h update hologram_name
-Description: Force update hologram khi bị lỗi hiển thị
-
-# Reload plugin khi có vấn đề
-Command: /aeh reload
-Description: Tải lại toàn bộ plugin và config
-
-# Kiểm tra thông tin chi tiết
-Command: /aeh h info hologram_name
-Description: Xem thông tin chi tiết của hologram
-
-# Bật/tắt hologram
-Commands:
-  - /aeh h disable hologram_name (tắt hologram)
-  - /aeh h enable hologram_name (bật hologram)
 ```
 
 ---
